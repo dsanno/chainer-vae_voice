@@ -1,0 +1,4 @@
+data/voice/*
+!data/voice/.gitkeep
+data/train/*
+!data/train/.gitkeep
