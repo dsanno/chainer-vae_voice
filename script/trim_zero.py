@@ -11,6 +11,7 @@ output_file      = args.output_file
 TRIM_ZERO_LENGTH = 200
 READ_SIZE        = 1024
 MIN_WRITE_SIZE   = 1024
+THRESHOLD        = 10
 write_buf        = []
 data_size        = struct.calcsize('h')
 zero_data_length = 0
@@ -20,7 +21,7 @@ while True:
         break
     value = struct.unpack('{}h'.format(len(read_buf) / data_size), read_buf)
     for i in range(len(value)):
-        if value[i] == 0:
+        if abs(value[i]) < THRESHOLD:
             zero_data_length += 1
         else:
             if zero_data_length >= TRIM_ZERO_LENGTH:
