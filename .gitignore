@@ -1,4 +1,11 @@
+*.pyc
 data/voice/*
+!data/voice/.gitkeep
+data/voice_gen/*
 !data/voice/.gitkeep
 data/train/*
 !data/train/.gitkeep
+data/gen/*
+!data/gen/.gitkeep
+data/model/*
+!data/model/.gitkeep
